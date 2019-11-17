@@ -6,8 +6,6 @@ import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -19,53 +17,53 @@ public class BookControllerTest {
 
 	@Autowired
 	private BookController bookController;
-	
+
 	@Autowired
 	private BookRepository bookRepository;
-	private Book book1 = new Book(1,"asdf", "asdf");
-	
-    //@Mock
-    //private HelloRepository helloRepository;
+	private Book book1 = new Book(1, "asdf", "asdf");
 
-    //@InjectMocks // auto inject helloRepository
-    //private HelloService helloService = new HelloServiceImpl();
+	// @Mock
+	// private HelloRepository helloRepository;
 
-    @BeforeEach
-    void setMockOutput() {
-    	bookRepository.deleteAll();
-        //when(bookRepository.get()).thenReturn("Hello Mockito From Repository");
-    } 
-	
-    @Test
-    public void testAdd() {
-        int a = 1, b = 1;
-        Assertions.assertEquals(2, a + b);
-    }
+	// @InjectMocks // auto inject helloRepository
+	// private HelloService helloService = new HelloServiceImpl();
+
+	@BeforeEach
+	void setMockOutput() {
+		bookRepository.deleteAll();
+		// when(bookRepository.get()).thenReturn("Hello Mockito From Repository");
+	}
+
+	@Test
+	public void testAdd() {
+		int a = 1, b = 1;
+		Assertions.assertEquals(2, a + b);
+	}
 
 	@Test
 	public void getAllBooks_returnsArrayOfBooks() {
 		assertEquals(0, Lists.newArrayList(bookController.getAllBooks()).size());
 	}
-	
+
 	@Test
 	public void saveBook_savesBook() {
 		assertEquals(0, Lists.newArrayList(bookController.getAllBooks()).size());
 		bookRepository.save(book1);
 		assertEquals(1, Lists.newArrayList(bookController.getAllBooks()).size());
 	}
-	
+
 	@Test
 	public void getBookById_returnsBook() {
 		bookRepository.save(book1);
 		assertEquals(1, Lists.newArrayList(bookRepository.findById(1L)).size());
 	}
-	
+
 	@Test
 	public void getBookByTitle_returnsBook() {
 		bookRepository.save(book1);
 		assertEquals(1, Lists.newArrayList(bookRepository.findByTitle("asdf")).size());
 	}
-	
+
 	@Test
 	public void delete_returnsBook() {
 		bookRepository.save(book1);
