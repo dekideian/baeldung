@@ -23,4 +23,6 @@ public class SimpleController {
 		model.addAttribute("appname", configurationService.getAppName());
 		return "home";
 	}
+	
+	
 }
