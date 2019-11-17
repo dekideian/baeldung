@@ -15,7 +15,8 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler({ BookNotFoundException.class })
 	protected ResponseEntity<Object> handleNotFound(Exception ex, WebRequest request) {
-		return handleExceptionInternal(ex, "Book not found"+ex, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+		System.out.println("exception "+ex);
+		return handleExceptionInternal(ex, "Book not found", new HttpHeaders(), HttpStatus.NOT_FOUND, request);
 	}
 
 	@ExceptionHandler({ BookIdMismatchException.class, ConstraintViolationException.class,

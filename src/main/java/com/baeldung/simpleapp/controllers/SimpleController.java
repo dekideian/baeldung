@@ -18,9 +18,4 @@ public class SimpleController {
 		model.addAttribute("appname", appName);
 		return "home";
 	}
-	
-	@GetMapping("/health")
-	public String health() {
-		return "OK!";
-	}
 }
