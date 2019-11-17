@@ -1,15 +1,17 @@
 package com.baeldung.simpleapp.dtos;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class BookDTO {
 
-	private final long id;
-	private final String title;
-	private final String author;
+	private long id;
+	private String title;
+	private String author;
 
 	public BookDTO(long id, String title, String author) {
 		super();
