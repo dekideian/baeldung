@@ -88,7 +88,6 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<!-- <scope>provided</scope> -->
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -121,7 +120,7 @@
 			<artifactId>webjars-locator-core</artifactId>
 		</dependency>
 		<!-- end jquery -->
-<!-- 		cookie for csrf (sea surf) purposes -->
+		<!-- cookie for csrf (sea surf) purposes -->
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>js-cookie</artifactId>

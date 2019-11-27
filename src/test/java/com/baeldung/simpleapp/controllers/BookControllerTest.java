@@ -22,16 +22,9 @@ public class BookControllerTest {
 	private BookRepository bookRepository;
 	private Book book1 = new Book(1, "asdf", "asdf");
 
-	// @Mock
-	// private HelloRepository helloRepository;
-
-	// @InjectMocks // auto inject helloRepository
-	// private HelloService helloService = new HelloServiceImpl();
-
 	@BeforeEach
 	void setMockOutput() {
 		bookRepository.deleteAll();
-		// when(bookRepository.get()).thenReturn("Hello Mockito From Repository");
 	}
 
 	@Test
