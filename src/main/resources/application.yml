@@ -3,7 +3,7 @@ server:
   error:
     path: /error2
 
-#thymeleaf
+# thymeleaf
 spring:
   thymeleaf:
     check-template-location: true
@@ -13,16 +13,16 @@ spring:
     encoding: UTF-8
     content-type: text/html
     cache: false
-#custom
+# custom
   application:
     name: Bootstrap Spring Boot  
-#h2
+# h2
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:bootapp;DB_CLOSE_DELAY=-1
     username: sa
     password: 
-#Security    
+# Security    
 security:
   oauth2:
     client:
@@ -35,4 +35,6 @@ security:
       clientAuthenticationScheme: form
     resource:
       userInfoUri: https://graph.facebook.com/me
+sonar: 
+   tests: src/test
  
