@@ -43,16 +43,16 @@ public class BookService {
 		return bookRepository.save(newBook);
 	}
 
-	public void delete(Long id) {
-		bookRepository.findById(id).orElseThrow(BookNotFoundException::new);
-		bookRepository.deleteById(id);
+	public void delete(Long id) {		
+		Book someBook = bookRepository.findById(id).orElseThrow(BookNotFoundException::new);
+		bookRepository.delete(someBook);
 	}
 
 	public Book updateBook(Book book, Long id) {
 		if (book.getId() != id) {
 			throw new BookIdMismatchException();
 		}
-		bookRepository.findById(id).orElseThrow(BookNotFoundException::new);
-		return bookRepository.save(book);
+		Book foundBook = bookRepository.findById(id).orElseThrow(BookNotFoundException::new);
+		return bookRepository.save(foundBook);
 	}
 }
