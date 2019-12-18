@@ -55,7 +55,7 @@ public class BookController {
 	public BookDTO getBookByTitle(@PathVariable String title) {
 		return  (BookDTO) bookService.findBookByTitle(title)
 				.map(book->convert.toType(book, BookDTO.class))
-				.orElseThrow();
+				.orElseThrow(BookNotFoundException::new);
 	}
 
 	@PostMapping

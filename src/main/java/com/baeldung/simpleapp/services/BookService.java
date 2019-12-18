@@ -28,9 +28,7 @@ public class BookService {
 
 	public Optional<Book> findBookById(Long id) {
 		return bookRepository
-				.findById(id)
-				.stream()
-				.findAny();
+				.findById(id);
 	}
 
 	public Optional<Book> findBookByTitle(@PathVariable String title) {
