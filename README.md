@@ -20,3 +20,5 @@ docker ps, docker stop
 <br>resilience; 
 <br>reactive
 <br>Deploy on Azure
+<br>Spring Data Rest
+<br>Plain UI
